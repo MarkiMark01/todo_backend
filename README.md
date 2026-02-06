@@ -1,4 +1,4 @@
-# TODO REST API (NestJS + Prisma + PostgreSQL)
+### TODO REST API (NestJS + Prisma + PostgreSQL)
 
 A robust and scalable task management API built with NestJS. This project follows clean architecture principles (Controller/Service pattern) and is fully containerized for easy deployment.
 
@@ -36,7 +36,7 @@ POSTGRES_DB=todo_db
 
 Option 1: Quick Run via Docker (Recommended)
 
-# Build and start all services
+### Build and start all services
 ```bash
 docker-compose up --build
 ```
@@ -45,17 +45,17 @@ Migrations are applied automatically. The API will be available at http://localh
 
 ### Option 2: Local Setup
 
-# 1. Install dependencies
+### 1. Install dependencies
 ```bash
 npm install
 ```
 
-# 2. Sync database schema and generate Prisma client
+### 2. Sync database schema and generate Prisma client
 ```bash
 npx prisma migrate dev --name init
 ```
 
-# 3. Start the application in development mode
+### 3. Start the application in development mode
 ```bash
 npm run start:dev
 ```
@@ -69,7 +69,7 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5432/todo_db?schema=publi
 # Connection string for Docker Compose setup:
 # DATABASE_URL="postgresql://postgres:postgres@db:5432/todo_db?schema=public"
 ```
-# Run End-to-End (e2e) tests
+### Run End-to-End (e2e) tests
 ```bash
 npm run test:e2e
 ```
