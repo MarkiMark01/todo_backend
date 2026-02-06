@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, HttpCode } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto, UpdateTaskDto, TaskQueryFilters } from './task.dto';
 
@@ -27,11 +27,8 @@ export class TasksController {
   }
 
   @Delete(':id')
+  @HttpCode(204)
   async remove(@Param('id') id: string) {
-    await this.tasksService.remove(id);
-    return { 
-      message: 'Task deleted successfully',
-      id: id 
-    };
+    return this.tasksService.remove(id);
   }
 }
